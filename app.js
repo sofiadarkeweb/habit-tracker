@@ -9,6 +9,9 @@ const addbBtn =document.querySelector(".submit-button")
 addbBtn.addEventListener('click', containerCreator)
 
 //function//
-function containerCreator(){
+function containerCreator(event){
+    event.preventDefault()
     console.log("testing")
 }
+
+console.log("hello")
