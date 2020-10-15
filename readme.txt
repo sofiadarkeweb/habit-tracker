@@ -1,1 +1,1 @@
-This is our habit tracker - heyhey hey
+This is our habit tracker 
