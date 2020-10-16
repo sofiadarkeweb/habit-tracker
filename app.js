@@ -52,9 +52,9 @@ fertilizeBtn.innerText = "check fertilize"
 //Create check button - repot
     const checkRepotBtn = document.createElement("button");
     newContainerDiv.appendChild(checkRepotBtn);
-    checkRepotBtn.innerText = "check repot"
+    checkRepotBtn.innerHTML = "<i class='fas fa-check'></i>"
 // Append to plant list
-    plantContainer.appendChild(newContainerDiv)
+    plantContainer.appendChild(newContainerDiv);
 }
 
 console.log("Hey")
