@@ -32,15 +32,27 @@ function containerCreator(event){
 //todo - water
     const todoWater = document.createElement("li");
     newContainerDiv.appendChild(todoWater);
-    todoWater.innerText = "water in 5 days"  
+    todoWater.innerText = "Water in 5 days"
+//Create check button - water
+const checkWaterBtn = document.createElement("button");
+newContainerDiv.appendChild(checkWaterBtn);
+checkWaterBtn.innerText = "check water"  
 //todo - fertilize
     const todoFertilize = document.createElement("li");
     newContainerDiv.appendChild(todoFertilize);
-    todoFertilize.innerText = "fertilize me in 12 days"
+    todoFertilize.innerText = "Fertilize me in 12 days"
+//Create check button - fertilize
+const fertilizeBtn = document.createElement("button");
+newContainerDiv.appendChild(fertilizeBtn);
+fertilizeBtn.innerText = "check fertilize"
 //todo - repot
     const todoRepot = document.createElement("li");
     newContainerDiv.appendChild(todoRepot);
-    todoRepot.innerText = "Repot me in 45 days"     
+    todoRepot.innerText = "Repot me in 45 days"  
+//Create check button - repot
+    const checkRepotBtn = document.createElement("button");
+    newContainerDiv.appendChild(checkRepotBtn);
+    checkRepotBtn.innerText = "check repot"
 // Append to plant list
     plantContainer.appendChild(newContainerDiv)
 }
