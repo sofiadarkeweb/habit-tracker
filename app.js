@@ -9,7 +9,7 @@ const plantContainer = document.querySelector(".plant-container")
 
 addbBtn.addEventListener("click", containerCreator)
 
-//function to create the div with plant information//
+//function to create the div with plant information
 function containerCreator(event){
     event.preventDefault();
 //Creates the container div
@@ -34,17 +34,23 @@ function containerCreator(event){
     newContainerDiv.appendChild(todoWater);
     todoWater.innerText = "Water in 5 days"
 //Create check button - water
-const checkWaterBtn = document.createElement("button");
-newContainerDiv.appendChild(checkWaterBtn);
-checkWaterBtn.innerText = "check water"  
+    const checkWaterBtn = document.createElement("button");
+    newContainerDiv.appendChild(checkWaterBtn);
+    checkWaterBtn.innerText = "check water" 
+    checkWaterBtn.addEventListener("click", function(){
+        todoWater.innerText = "Water in 4 days"
+    }) 
 //todo - fertilize
     const todoFertilize = document.createElement("li");
     newContainerDiv.appendChild(todoFertilize);
     todoFertilize.innerText = "Fertilize me in 12 days"
 //Create check button - fertilize
-const fertilizeBtn = document.createElement("button");
-newContainerDiv.appendChild(fertilizeBtn);
-fertilizeBtn.innerText = "check fertilize"
+    const fertilizeBtn = document.createElement("button");
+    newContainerDiv.appendChild(fertilizeBtn);
+    fertilizeBtn.innerText = "check fertilize"
+    fertilizeBtn.addEventListener("click", function(){
+        todoFertilize.innerText = "Fertilize me in 11 days"
+    })
 //todo - repot
     const todoRepot = document.createElement("li");
     newContainerDiv.appendChild(todoRepot);
@@ -53,6 +59,9 @@ fertilizeBtn.innerText = "check fertilize"
     const checkRepotBtn = document.createElement("button");
     newContainerDiv.appendChild(checkRepotBtn);
     checkRepotBtn.innerHTML = "<i class='fas fa-check'></i>"
+    checkRepotBtn.addEventListener("click", function(){
+        todoRepot.innerText = "Repot me in 44 days"
+    })
 // Append to plant list
     plantContainer.appendChild(newContainerDiv);
 }
