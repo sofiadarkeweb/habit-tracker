@@ -30,37 +30,28 @@ function containerCreator(event){
     descriptionInput.value = ""
 //Creates todo list
 //todo - water
-    const todoWater = document.createElement("li");
-    newContainerDiv.appendChild(todoWater);
-    todoWater.innerText = "Water in 5 days"
 //Create check button - water
     const checkWaterBtn = document.createElement("button");
     newContainerDiv.appendChild(checkWaterBtn);
-    checkWaterBtn.innerText = "check water" 
+    checkWaterBtn.innerText = "Water in 5 days" 
     checkWaterBtn.addEventListener("click", function(){
-        todoWater.innerText = "Water in 4 days"
+        checkWaterBtn.innerText = "Water in 4 days"
     }) 
 //todo - fertilize
-    const todoFertilize = document.createElement("li");
-    newContainerDiv.appendChild(todoFertilize);
-    todoFertilize.innerText = "Fertilize me in 12 days"
 //Create check button - fertilize
     const fertilizeBtn = document.createElement("button");
     newContainerDiv.appendChild(fertilizeBtn);
-    fertilizeBtn.innerText = "check fertilize"
+    fertilizeBtn.innerText = "Fertilize me in 12"
     fertilizeBtn.addEventListener("click", function(){
-        todoFertilize.innerText = "Fertilize me in 11 days"
+        fertilizeBtn.innerText = "Fertilize me in 11 days"
     })
 //todo - repot
-    const todoRepot = document.createElement("li");
-    newContainerDiv.appendChild(todoRepot);
-    todoRepot.innerText = "Repot me in 45 days"  
 //Create check button - repot
     const checkRepotBtn = document.createElement("button");
     newContainerDiv.appendChild(checkRepotBtn);
-    checkRepotBtn.innerHTML = "<i class='fas fa-check'></i>"
+    checkRepotBtn.innerHTML = "Repot me in 45 days"
     checkRepotBtn.addEventListener("click", function(){
-        todoRepot.innerText = "Repot me in 44 days"
+        checkRepotBtn.innerText = "Repot me in 44 days"
     })
 // Append to plant list
     plantContainer.appendChild(newContainerDiv);
