@@ -12,6 +12,24 @@ addbBtn.addEventListener("click", containerCreator)
 //function to create the div with plant information
 function containerCreator(event){
     event.preventDefault();
+    //variables to rewater
+    const date = new Date();
+    const dayOfTheMonth = date.getDate();
+    const dueWaterDate = dayOfTheMonth + 5;
+    const daysToRewater = dueWaterDate - dayOfTheMonth;
+    localStorage.setItem("dueWaterDate", dueWaterDate);
+    
+    //variables to fertilize
+    const dueFertilizeDate = dayOfTheMonth + 12;
+    const daysToFertilize = dueFertilizeDate - dayOfTheMonth;
+    localStorage.setItem("dueFertilizeDate", dueFertilizeDate);
+    
+    //variables to repot
+    const dueRepotDate = dayOfTheMonth + 45;
+    const daysToRepot = dueRepotDate - dayOfTheMonth;
+    localStorage.setItem("dueRepotDate", dueRepotDate);
+
+    console.log(localStorage)
 //Creates the container div
     const newContainerDiv = document.createElement("div");
 //Creates the header/name for the container
@@ -33,25 +51,37 @@ function containerCreator(event){
 //Create check button - water
     const checkWaterBtn = document.createElement("button");
     newContainerDiv.appendChild(checkWaterBtn);
-    checkWaterBtn.innerText = "Water in 5 days" 
+     if (daysToRewater === 1) {
+        checkWaterBtn.innerText = "Water in " + daysToRewater + " day";
+     } else {
+        checkWaterBtn.innerText = "Water in " + daysToRewater + " days";
+     }
     checkWaterBtn.addEventListener("click", function(){
-        checkWaterBtn.innerText = "Water in 4 days"
+        checkWaterBtn.innerText = "Water in 5 days"
     }) 
 //todo - fertilize
 //Create check button - fertilize
     const fertilizeBtn = document.createElement("button");
     newContainerDiv.appendChild(fertilizeBtn);
-    fertilizeBtn.innerText = "Fertilize me in 12"
+    if (daysToFertilize === 1) {
+        fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " day"; 
+    } else {
+        fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " days";
+    }
     fertilizeBtn.addEventListener("click", function(){
-        fertilizeBtn.innerText = "Fertilize me in 11 days"
+        fertilizeBtn.innerText = "Fertilize me in 12 days"
     })
 //todo - repot
 //Create check button - repot
     const checkRepotBtn = document.createElement("button");
     newContainerDiv.appendChild(checkRepotBtn);
-    checkRepotBtn.innerHTML = "Repot me in 45 days"
+    if (daysToRepot === 1) {
+        checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " day"
+    } else {
+        checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " days"
+    }
     checkRepotBtn.addEventListener("click", function(){
-        checkRepotBtn.innerText = "Repot me in 44 days"
+        checkRepotBtn.innerText = "Repot me in 45 days"
     })
 // Append to plant list
     plantContainer.appendChild(newContainerDiv);
