@@ -1,3 +1,82 @@
+
+body {
+	font-family: "Poppins", sans-serif;
+    background: #53f1cb;
+    color:#16552F;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.plant-container {
+	display: grid;
+	width: 1200px;
+	height: 150px;
+	grid-template-areas:
+		"image name name name button1 bin"
+		"image info info info button2 ."
+		"image info info info button3 .";
+	grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 2rem;
+}
+
+.img-box {
+	background: #fff8e5;
+	grid-area: image;
+	border: 1px solid;
+}
+
+.plant-name {
+    background: #fff8e5;
+	grid-area: name;
+    border: 1px solid;
+    width: auto;
+    padding-left: 0.3em;
+}
+
+.info-text {
+	background: #fff8e5;
+	grid-area: info;
+    border: 1px solid;
+    padding-left: 0.3em;
+}
+
+.water-btn {
+	grid-area: button1;
+	justify-self: stretch;
+    border: none;
+    border-radius: 5px;
+    margin: 5pt;
+	font-family: inherit;
+    background-color: #16552F;
+    color: #fff8e5;
+}
+
+.fertilize-btn {
+    grid-area: button2;
+    justify-self: stretch;
+    border: none;
+    border-radius: 5px;
+    margin: 5pt;
+	font-family: inherit;
+    background-color: #16552F;
+    color: #fff8e5;
+}
+
+.repot-btn {
+    grid-area: button3;
+    justify-self: stretch;
+    border: none;
+    border-radius: 5px;
+    margin: 5pt;
+	font-family: inherit;
+    background-color: #16552F;
+    color: #fff8e5;
+}
+
 #form-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
