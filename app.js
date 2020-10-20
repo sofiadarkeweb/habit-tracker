@@ -1,9 +1,10 @@
 //variables//
 
-const nameInput =document.querySelector(".name-input")
-const descriptionInput =document.querySelector(".description-input")
-const addbBtn =document.querySelector(".submit-button")
-const plantContainer = document.querySelector(".plant-container")
+const nameInput = document.querySelector(".name-input");
+const descriptionInput = document.querySelector(".description-input");
+const addbBtn = document.querySelector(".submit-button");
+const plantContainer = document.querySelector(".plant-container");
+const plantPhoto = document.getElementById("plant-photo").files;
 
 //todays date
 const today = new Date();
@@ -25,12 +26,14 @@ date.innerHTML = year + "-" + month + "-" + day;
 
 
 //event listeners//
-
 addbBtn.addEventListener("click", containerCreator)
 
 //function to create the div with plant information
 function containerCreator(event){
     event.preventDefault();
+    
+    //Display plant photo
+    
     //variables to rewater
     const date = new Date();
     const dayOfTheMonth = date.getDate();
@@ -112,5 +115,3 @@ function containerCreator(event){
 // Append to plant list
     plantContainer.appendChild(newContainerDiv);
 }
-
-console.log("Hey")
