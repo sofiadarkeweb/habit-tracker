@@ -1,0 +1,40 @@
+#form-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "image name name button" 
+    "image description description button"
+    "image description description .";
+    gap: 5px;
+    width: 80%;
+}
+
+.image-input {
+    grid-area: image;
+    width: 123px;
+    justify-self: end;
+    border: 1px solid;
+}
+
+.name-input {
+    grid-area: name;
+    width: auto;
+    justify-self: stretch;
+}
+
+.description-input {
+    grid-area: description;
+    width: auto;
+    justify-self: stretch;
+}
+
+.submit-button {
+    grid-area: button;
+    align-self: start;
+    height: 80px;
+    line-height: 80px;  
+    width: 80px;  
+    border-radius: 50%;
+    border: 1px solid;
+}
