@@ -5,7 +5,7 @@ const descriptionInput = document.querySelector(".description-input");
 const addbBtn = document.querySelector(".submit-button");
 const plantContainer = document.querySelector(".plant-container");
 const plantPhoto = document.getElementById("plant-photo").files;
-
+const addPlantForm = document.getElementById("form-container");
 //todays date
 const today = new Date();
 const day = today.getDate();
@@ -31,7 +31,8 @@ addbBtn.addEventListener("click", containerCreator)
 //function to create the div with plant information
 function containerCreator(event){
     event.preventDefault();
-    
+    if (addPlantForm.checkValidity()){
+
     //Display plant photo
     
     //variables to rewater
@@ -114,4 +115,7 @@ function containerCreator(event){
     })
 // Append to plant list
     plantContainer.appendChild(newContainerDiv);
+    } else {
+        alert("Please, fill in the form the name and the description of the plant.")
+    }
 }
