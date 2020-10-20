@@ -75,7 +75,8 @@ body {
 	font-family: inherit;
     background-color: #16552F;
     color: #fff8e5;
-=======
+}
+
 #form-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
