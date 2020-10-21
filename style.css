@@ -33,7 +33,7 @@ body {
 
 .plant-container {
 	display: grid;
-	width: 100%;
+	width: 1800px;
 	height: 150px;
 	grid-template-areas:
 		"image name name name button1 bin"
@@ -42,6 +42,8 @@ body {
 	grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 2rem;
+    border-radius: 5px;
+    border: none;
 }
 
 .img-box {
@@ -56,6 +58,8 @@ body {
     border: 1px solid;
     width: auto;
     padding-left: 0.3em;
+    border-radius: 5px;
+    border: none;
 }
 
 .info-text {
@@ -63,6 +67,8 @@ body {
 	grid-area: info;
     border: 1px solid;
     padding-left: 0.3em;
+    border-radius: 5px;
+    border: none;
 }
 
 .water-btn {
@@ -74,6 +80,8 @@ body {
 	font-family: inherit;
     background-color: #16552F;
     color: #fff8e5;
+    border-radius: 5px;
+    border: none;
 }
 
 .fertilize-btn {
@@ -85,6 +93,8 @@ body {
 	font-family: inherit;
     background-color: #16552F;
     color: #fff8e5;
+    border-radius: 5px;
+    border: none;
 }
 
 .repot-btn {
@@ -96,6 +106,8 @@ body {
 	font-family: inherit;
     background-color: #16552F;
     color: #fff8e5;
+    border-radius: 5px;
+    border: none;
 }
 
 #form-container {
