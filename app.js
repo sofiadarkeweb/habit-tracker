@@ -1,5 +1,4 @@
-//variables//
-
+//variables
 const nameInput = document.querySelector(".name-input");
 const descriptionInput = document.querySelector(".description-input");
 const addbBtn = document.querySelector(".submit-button");
@@ -34,9 +33,11 @@ function containerCreator(event){
     
     //Display plant photo
     
-    //variables to rewater
+    //variables to date
     const date = new Date();
     const dayOfTheMonth = date.getDate();
+
+    //variables to rewater
     const dueWaterDate = dayOfTheMonth + 5;
     const daysToRewater = dueWaterDate - dayOfTheMonth;
     localStorage.setItem("dueWaterDate", dueWaterDate);
@@ -55,22 +56,28 @@ function containerCreator(event){
 //Creates the container div
     const newContainerDiv = document.createElement("div");
     newContainerDiv.classList.add("plant-container");
+
 //Creates the header/name for the container
     const newName = document.createElement("h2");    
     newContainerDiv.appendChild(newName);
     newName.innerText = nameInput.value
     newName.classList.add("plant-name");
+
 // Append to plant list
     plantContainer.appendChild(newContainerDiv)
+
 // Clears name input
     nameInput.value = ""
+
 //Creates the description for the plant
     const newDescription = document.createElement("p");    
     newContainerDiv.appendChild(newDescription);
     newDescription.innerText = descriptionInput.value
     newDescription.classList.add("info-text");
+
 // Clears name input
     descriptionInput.value = ""
+
 //Creates todo list
 //todo - water
 //Create check button - water
@@ -86,6 +93,7 @@ function containerCreator(event){
         checkWaterBtn.innerText = "Water in 5 days"
     }) 
     checkWaterBtn.classList.add("water-btn");
+
 //todo - fertilize
 //Create check button - fertilize
     const fertilizeBtn = document.createElement("button");
@@ -98,7 +106,8 @@ function containerCreator(event){
     }
     fertilizeBtn.addEventListener("click", function(){
         fertilizeBtn.innerText = "Fertilize me in 12 days"
-    })
+    });
+
 //todo - repot
 //Create check button - repot
     const checkRepotBtn = document.createElement("button");
@@ -112,6 +121,7 @@ function containerCreator(event){
     checkRepotBtn.addEventListener("click", function(){
         checkRepotBtn.innerText = "Repot me in 45 days"
     })
+    
 // Append to plant list
     plantContainer.appendChild(newContainerDiv);
 }

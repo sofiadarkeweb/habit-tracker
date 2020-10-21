@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     text-align: center;
     margin: 0 auto;
     width: 50vw;
-}
+} 
 
 #date {
     padding-top: 2rem;
@@ -30,14 +29,11 @@ body {
   .paragraph {
     padding-top: 1rem;
     padding-bottom: 2rem;
-
-
 } 
-
 
 .plant-container {
 	display: grid;
-	width: 1200px;
+	width: 100%;
 	height: 150px;
 	grid-template-areas:
 		"image name name name button1 bin"
@@ -112,8 +108,7 @@ body {
     "image description description .";
     gap: 8px;
     width: 800px;
-    padding: 40px 0;
-    
+    padding: 40px 0;  
 }
 
 .image-input {
@@ -174,5 +169,4 @@ body {
     font-weight: 500;
     color: #16552F;
     padding-left: 10px;
-  }
-
+  } 
