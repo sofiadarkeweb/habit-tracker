@@ -1,14 +1,39 @@
 
-body {
-	font-family: "Poppins", sans-serif;
-    background: #53f1cb;
-    color:#16552F;
+*{
+    margin: 0;
+    padding: 0;
+
 }
 
-* {
-	margin: 0;
-	padding: 0;
+body {
+    color: #16552F;
+    background-color: #53F1CB;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    width: 50vw;
 }
+
+#date {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.header {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+}
+
+  .paragraph {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+
+} 
+
 
 .plant-container {
 	display: grid;
@@ -150,3 +175,4 @@ body {
     color: #16552F;
     padding-left: 10px;
   }
+
