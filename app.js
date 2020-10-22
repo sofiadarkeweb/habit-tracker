@@ -5,6 +5,14 @@ const addbBtn = document.querySelector(".submit-button");
 const plantContainer = document.querySelector(".plant-container");
 const plantList = document.querySelector(".plant-list");
 const plantPhoto = document.getElementById("plant-photo").files;
+const plantImgs = [
+	"plant1.jpg",
+	"plant2.jpg",
+	"plant3.jpg",
+	"plant4.jpg",
+	"plant5.jpg"
+];
+
 
 //todays date
 const today = new Date();
@@ -54,6 +62,12 @@ function containerCreator(event) {
 	const dueRepotDate = dayOfTheMonth + 45;
 	const daysToRepot = dueRepotDate - dayOfTheMonth;
 	localStorage.setItem("dueRepotDate", dueRepotDate);
+
+	//Creates the img for the plant
+	const plantImg = document.createElement("img");
+	plantDiv.appendChild(plantImg);
+	plantImg.src = plantImgs[Math.floor(Math.random() * plantImgs.length)];
+	plantImg.classList.add("image-plant");
 
 	//Creates the header/name for the container
 	const newName = document.createElement("h2");
