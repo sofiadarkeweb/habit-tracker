@@ -1,184 +1,182 @@
-*{
-    margin: 0;
-    padding: 0;
-
+* {
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    color: #16552F;
-    background-color: #53F1CB;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    margin: 0 auto;
-    width: 50vw;
-} 
+	color: #16552f;
+	background-color: #53f1cb;
+	font-family: "Poppins", sans-serif;
+	text-align: center;
+	margin: 0 auto;
+	width: 70vw;
+}
 
 #date {
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+	padding-top: 2rem;
+	padding-bottom: 1.5rem;
 }
 
 .header {
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-
+	padding-top: 2rem;
+	padding-bottom: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
 
-  .paragraph {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-} 
+.paragraph {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
 
 .plant-container {
-	display: grid;
-	width: 1800px;
-	height: 150px;
-	grid-template-areas:
-		"image name name name button1 bin"
-		"image info info info button2 ."
-		"image info info info button3 .";
-	grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    padding: 2rem;
-    border-radius: 5px;
-    border: none;
+}
+
+.plant-list {
+	display: block;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+    background: #fff8e5;
 }
 
 .img-box {
-	background: #fff8e5;
-	grid-area: image;
 	border: 1px solid;
 }
 
 .plant-name {
-    background: #fff8e5;
-	grid-area: name;
-    border: 1px solid;
-    width: auto;
-    padding-left: 0.3em;
-    border-radius: 5px;
-    border: none;
+	border: 1px solid;
+	width: auto;
+	padding-left: 0.3em;
+	border-radius: 5px;
+	border: none;
+	text-align: left;
 }
 
 .info-text {
-	background: #fff8e5;
-	grid-area: info;
-    border: 1px solid;
-    padding-left: 0.3em;
-    border-radius: 5px;
-    border: none;
+	border: 1px solid;
+	padding-left: 0.3em;
+	border-radius: 5px;
+	border: none;
+	text-align: left;
 }
 
 .water-btn {
-	grid-area: button1;
 	justify-self: stretch;
-    border: none;
-    border-radius: 5px;
-    margin: 5pt;
+	border: none;
+	border-radius: 5px;
+	margin: 5pt;
 	font-family: inherit;
-    background-color: #16552F;
+	background-color: #16552f;
     color: #fff8e5;
-    border-radius: 5px;
-    border: none;
+	border-radius: 5px;
+	border: none;
 }
 
 .fertilize-btn {
-    grid-area: button2;
-    justify-self: stretch;
-    border: none;
-    border-radius: 5px;
-    margin: 5pt;
+	justify-self: stretch;
+	border: none;
+	border-radius: 5px;
+	margin: 5pt;
 	font-family: inherit;
-    background-color: #16552F;
+	background-color: #16552f;
     color: #fff8e5;
-    border-radius: 5px;
-    border: none;
+	border-radius: 5px;
+	border: none;
 }
 
 .repot-btn {
-    grid-area: button3;
-    justify-self: stretch;
-    border: none;
-    border-radius: 5px;
-    margin: 5pt;
+	justify-self: stretch;
+	border: none;
+	border-radius: 5px;
+	margin: 5pt;
 	font-family: inherit;
-    background-color: #16552F;
+	background-color: #16552f;
     color: #fff8e5;
-    border-radius: 5px;
-    border: none;
+	border-radius: 5px;
+	border: none;
+}
+
+.bin-btn {
+	align-self: start;
+	height: 70px;
+	line-height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #16552f;
+	margin-left: 15px;
 }
 
 #form-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-    "image name name button" 
-    "image description description button"
-    "image description description .";
-    gap: 8px;
-    width: 800px;
-    padding: 40px 0;  
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"image name name button"
+		"image description description button"
+		"image description description .";
+	gap: 8px;
+	width: 800px;
+	padding: 40px 0;
 }
 
 .image-input {
-    grid-area: image;
-    width: 110px;
-    justify-self: end;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff8e5;
+	grid-area: image;
+	width: 110px;
+	justify-self: end;
+	border: none;
+	border-radius: 5px;
+	background-color: #fff8e5;
 }
 
 .name-input {
-    grid-area: name;
-    width: auto;
-    justify-self: stretch;
-    background-color: #fff8e5;
-    border-radius: 5px;
-    border: none;
+	grid-area: name;
+	width: auto;
+	justify-self: stretch;
+	background-color: #fff8e5;
+	border-radius: 5px;
+	border: none;
 }
 
 .description-input {
-    grid-area: description;
-    width: auto;
-    justify-self: stretch;
-    background-color: #fff8e5;
-    border-radius: 5px;
-    border: none;
+	grid-area: description;
+	width: auto;
+	justify-self: stretch;
+	background-color: #fff8e5;
+	border-radius: 5px;
+	border: none;
 }
 
 .submit-button {
-    grid-area: button;
-    align-self: start;
-    height: 70px;
-    line-height: 70px;  
-    width: 70px;  
-    border-radius: 50%;
-    border: none;
-    background-color: #16552F;
-    margin-left: 15px;
+	grid-area: button;
+	align-self: start;
+	height: 70px;
+	line-height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #16552f;
+	margin-left: 15px;
 }
 
 #btn-icon {
-    color: #fff8e5;
-    font-size: 38px;
-    padding-top: 15px;
+	color: #fff8e5;
+	font-size: 38px;
+	padding-top: 15px;
 }
 
 .description-input::placeholder {
-    font-family: "Poppins", sans-serif;
-    color: #16552F;
-    padding-left: 10px;
-    padding-top: 10px;
-    font-size: 12px;
-  }
+	font-family: "Poppins", sans-serif;
+	color: #16552f;
+	padding-left: 10px;
+	padding-top: 10px;
+	font-size: 12px;
+}
 
-  .name-input::placeholder {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    color: #16552F;
-    padding-left: 10px;
-  } 
+.name-input::placeholder {
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	color: #16552f;
+	padding-left: 10px;
+}
