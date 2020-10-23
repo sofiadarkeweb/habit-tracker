@@ -39,8 +39,8 @@ function containerCreator(event) {
 	event.preventDefault();
 
 	// create plant Div
-	const plantDiv = document.createElement("div");
-	/*plantDiv.classList.add("plant-list");*/
+    const plantDiv = document.createElement("div");
+    plantDiv.classList.add("plant");
 
 	//Display plant photo
 
