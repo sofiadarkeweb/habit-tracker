@@ -132,7 +132,7 @@ function containerCreator(event) {
 
 	const binBtn = document.createElement("button");
 	binBtn.classList.add("bin-btn");
-	binBtn.innerHTML = `<i class="fas fa"></i>`;
+	binBtn.innerHTML = '<i class="fas fa"></i>';
 	plantDiv.appendChild(binBtn);
 
 	// Append to plant list
