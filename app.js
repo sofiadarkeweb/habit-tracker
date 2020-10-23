@@ -4,7 +4,6 @@ const descriptionInput = document.querySelector(".description-input");
 const addbBtn = document.querySelector(".submit-button");
 const plantContainer = document.querySelector(".plant-container");
 const plantList = document.querySelector(".plant-list");
-const plantPhoto = document.getElementById("plant-photo").files;
 const plantImgs = [
 	"plant1.jpg",
 	"plant2.jpg",
@@ -12,7 +11,6 @@ const plantImgs = [
 	"plant4.jpg",
 	"plant5.jpg"
 ];
-
 
 //todays date
 const today = new Date();
@@ -132,16 +130,9 @@ function containerCreator(event) {
 
 	const binBtn = document.createElement("button");
 	binBtn.classList.add("bin-btn");
-	binBtn.innerHTML = '<i class="fas fa"></i>';
+	binBtn.innerHTML = '<i id="btn-icon-trash" class="fas fa-trash"></i>';
 	plantDiv.appendChild(binBtn);
 
 	// Append to plant list
 	plantList.appendChild(plantDiv);
 }
-
-//bin button
-
-binBtn.addEventListener("click", function () {
-	const divToDelete = document.getElementByClass("plant-list");
-	divToDelete.remove();
-});
