@@ -30,14 +30,20 @@ body {
 }
 
 .plant-container {
+	
 }
 
 .plant-list {
 	display: block;
 	justify-content: center;
 	align-items: center;
-	border-radius: 5px;
-    background: #fff8e5;
+	border-radius: 5px;	
+}
+
+.plant {
+	background: #fff8e5;
+	margin-bottom: 3rem;
+	margin-top: 3rem;
 }
 
 .img-box {
@@ -50,7 +56,7 @@ body {
 	padding-left: 0.3em;
 	border-radius: 5px;
 	border: none;
-	text-align: left;
+	/* text-align: left; */
 }
 
 .info-text {
@@ -58,11 +64,12 @@ body {
 	padding-left: 0.3em;
 	border-radius: 5px;
 	border: none;
-	text-align: left;
+	/* text-align: left; */
 }
 
 .water-btn {
 	justify-self: stretch;
+	width: 200px;
 	border: none;
 	border-radius: 5px;
 	margin: 5pt;
@@ -75,6 +82,7 @@ body {
 
 .fertilize-btn {
 	justify-self: stretch;
+	width: 200px;
 	border: none;
 	border-radius: 5px;
 	margin: 5pt;
@@ -87,6 +95,7 @@ body {
 
 .repot-btn {
 	justify-self: stretch;
+	width: 200px;
 	border: none;
 	border-radius: 5px;
 	margin: 5pt;
@@ -99,9 +108,9 @@ body {
 
 .bin-btn {
 	align-self: start;
-	height: 70px;
-	line-height: 70px;
-	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	width: 30px;
 	border-radius: 50%;
 	border: none;
 	background-color: #16552f;
