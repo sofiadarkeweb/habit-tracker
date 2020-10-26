@@ -4,7 +4,6 @@ const descriptionInput = document.querySelector(".description-input");
 const addbBtn = document.querySelector(".submit-button");
 const plantContainer = document.querySelector(".plant-container");
 const plantList = document.querySelector(".plant-list");
-const plantPhoto = document.getElementById("plant-photo").files;
 const plantImgs = [
 	"plant1.jpg",
 	"plant2.jpg",
@@ -12,7 +11,6 @@ const plantImgs = [
 	"plant4.jpg",
 	"plant5.jpg"
 ];
-
 
 //todays date
 const today = new Date();
@@ -31,16 +29,19 @@ const date = document.getElementById("date");
 
 date.innerHTML = year + "-" + month + "-" + day;
 
-//event listeners//
+//event listeners
 addbBtn.addEventListener("click", containerCreator);
 
 //function to create the div with plant information
 function containerCreator(event) {
 	event.preventDefault();
 
+	const plantIdentifier = "plant-" + Math.round(Math.random() * 100000);
+
 	// create plant Div
-    const plantDiv = document.createElement("div");
-    plantDiv.classList.add("plant");
+	const plantDiv = document.createElement("div");
+	plantDiv.id = plantIdentifier;
+	plantDiv.classList.add("plant");
 
 	//Display plant photo
 
@@ -51,17 +52,17 @@ function containerCreator(event) {
 	//variables to rewater
 	const dueWaterDate = dayOfTheMonth + 5;
 	const daysToRewater = dueWaterDate - dayOfTheMonth;
-	localStorage.setItem("dueWaterDate", dueWaterDate);
+	localStorage.setItem("dueWaterDate-" + plantIdentifier, dueWaterDate);
 
 	//variables to fertilize
 	const dueFertilizeDate = dayOfTheMonth + 12;
 	const daysToFertilize = dueFertilizeDate - dayOfTheMonth;
-	localStorage.setItem("dueFertilizeDate", dueFertilizeDate);
+	localStorage.setItem("dueFertilizeDate-" + plantIdentifier, dueFertilizeDate);
 
 	//variables to repot
 	const dueRepotDate = dayOfTheMonth + 45;
 	const daysToRepot = dueRepotDate - dayOfTheMonth;
-	localStorage.setItem("dueRepotDate", dueRepotDate);
+	localStorage.setItem("dueRepotDate-" + plantIdentifier, dueRepotDate);
 
 	//Creates the img for the plant
 	const plantImg = document.createElement("img");
@@ -132,16 +133,15 @@ function containerCreator(event) {
 
 	const binBtn = document.createElement("button");
 	binBtn.classList.add("bin-btn");
-	binBtn.innerHTML = `<i class="fas fa"></i>`;
+	binBtn.innerHTML = '<i id="btn-icon-trash" class="fas fa-trash"></i>';
 	plantDiv.appendChild(binBtn);
+	binBtn.addEventListener("click", deleteTodo);
+	
+	function deleteTodo() {
+		const selectedPlant = document.getElementById(plantIdentifier);
+		selectedPlant.remove();
+	}
 
 	// Append to plant list
 	plantList.appendChild(plantDiv);
 }
-
-//bin button
-
-binBtn.addEventListener("click", function () {
-	const divToDelete = document.getElementByClass("plant-list");
-	divToDelete.remove();
-});

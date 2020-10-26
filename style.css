@@ -112,11 +112,13 @@ body {
 }
 
 .bin-btn {
+
 	grid-column-start: 7;
 	grid-column-end: 8;
-	height: 30px;
-	line-height: 30px;
-	width: 30px;
+	align-self: start;
+	height: 40px;
+  line-height: 40px;
+	width: 40px;
 	border-radius: 50%;
 	border: none;
 	background-color: #16552f;
@@ -124,24 +126,16 @@ body {
 
 #form-container {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-areas:
-		"image name name button"
-		"image description description button"
-		"image description description .";
+		"name name button"
+		"description description button"
+		"description description .";
 	gap: 8px;
-	width: 800px;
+	width: 80vw;
 	padding: 40px 0;
-}
-
-.image-input {
-	grid-area: image;
-	width: 110px;
-	justify-self: end;
-	border: none;
-	border-radius: 5px;
-	background-color: #fff8e5;
+	margin-left: 5.5rem;
 }
 
 .name-input {
@@ -178,6 +172,12 @@ body {
 	color: #fff8e5;
 	font-size: 38px;
 	padding-top: 15px;
+}
+
+#btn-icon-trash {
+	color: #fff8e5;
+	font-size: 1.1rem;
+	padding-top: 0.7rem;
 }
 
 .description-input::placeholder {
