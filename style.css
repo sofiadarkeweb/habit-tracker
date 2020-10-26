@@ -8,8 +8,9 @@ body {
 	background-color: #53f1cb;
 	font-family: "Poppins", sans-serif;
 	text-align: center;
+	/* justify-content: center; */
 	margin: 0 auto;
-	width: 70vw;
+	width: 80vw;
 }
 
 #date {
@@ -30,96 +31,97 @@ body {
 }
 
 .plant-container {
-	
+	justify-content: center;
 }
 
 .plant-list {
 	display: block;
-	justify-content: center;
-	align-items: center;
-	border-radius: 5px;	
+
+	/* align-items: center;	 */
 }
 
 .plant {
+	/* display: flex; */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr ;
+	grid-template-rows: repeat(3, 1fr);
+	/* grid-template-areas:
+		"pic plantname plantname plantname buttons bin"
+		"pic info info info buttons ."
+		"pic info info buttons ."; */
 	background: #fff8e5;
-	margin-bottom: 3rem;
-	margin-top: 3rem;
-}
-
-.img-box {
-	border: 1px solid;
-}
-
-.plant-name {
-	border: 1px solid;
-	width: auto;
-	padding-left: 0.3em;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 	border-radius: 5px;
-	border: none;
-	/* text-align: left; */
+	column-gap: 20px;
+	box-sizing: border-box;
+	
+	
 }
 
 .image-plant {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 4;
 	width: 10rem;
-	height: 10rem;
+	height:100%;
+    width: auto;
+	
+	border-radius: 5px;
 }
 
+.plant-name {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	margin-top: 1rem;
+	font-size: 2em;
+	text-align: left;
+}
+
+
 .info-text {
-	border: 1px solid;
-	padding-left: 0.3em;
-	border-radius: 5px;
-	border: none;
+	grid-column-start: 2;
+	grid-column-end: 5;
+	grid-row-start: 2;
+	grid-row-end: 4;
+	text-align: left;
+	font-size: 0.8em;
+
 	/* text-align: left; */
 }
 
-.water-btn {
-	justify-self: stretch;
-	width: 200px;
+.todo-buttons {
+	grid-column-start: 5;
+	grid-column-end: 7;
+	/* grid-row-start: 1;
+	grid-row-end: 4; */
+	/* justify-self: stretch; */
+	/* width: 12rem;
+	height: 3rem; */
 	border: none;
 	border-radius: 5px;
-	margin: 5pt;
 	font-family: inherit;
+	font-size: 1em;
 	background-color: #16552f;
-    color: #fff8e5;
+	color: #fff8e5;
 	border-radius: 5px;
-	border: none;
-}
-
-.fertilize-btn {
-	justify-self: stretch;
-	width: 200px;
-	border: none;
-	border-radius: 5px;
-	margin: 5pt;
-	font-family: inherit;
-	background-color: #16552f;
-    color: #fff8e5;
-	border-radius: 5px;
-	border: none;
-}
-
-.repot-btn {
-	justify-self: stretch;
-	width: 200px;
-	border: none;
-	border-radius: 5px;
-	margin: 5pt;
-	font-family: inherit;
-	background-color: #16552f;
-    color: #fff8e5;
-	border-radius: 5px;
-	border: none;
+	padding: 5px;
+	margin: 10px;
+	
 }
 
 .bin-btn {
+
+	grid-column-start: 7;
+	grid-column-end: 8;
 	align-self: start;
 	height: 40px;
-	line-height: 40px;
+  line-height: 40px;
 	width: 40px;
 	border-radius: 50%;
 	border: none;
 	background-color: #16552f;
-	margin-left: 15px;
 }
 
 #form-container {

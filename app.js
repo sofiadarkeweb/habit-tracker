@@ -92,7 +92,7 @@ function containerCreator(event) {
 	//Create check button - water
 	const checkWaterBtn = document.createElement("button");
 	plantDiv.appendChild(checkWaterBtn);
-	checkWaterBtn.classList.add("water-btn");
+	checkWaterBtn.classList.add("todo-buttons");
 	if (daysToRewater === 1) {
 		checkWaterBtn.innerText = "Water in " + daysToRewater + " day";
 	} else {
@@ -101,12 +101,12 @@ function containerCreator(event) {
 	checkWaterBtn.addEventListener("click", function () {
 		checkWaterBtn.innerText = "Water in 5 days";
 	});
-	checkWaterBtn.classList.add("water-btn");
+	checkWaterBtn.classList.add("todo-buttons");
 
 	//todo - fertilize
 	//Create check button - fertilize
 	const fertilizeBtn = document.createElement("button");
-	fertilizeBtn.classList.add("fertilize-btn");
+	fertilizeBtn.classList.add("todo-buttons");
 	plantDiv.appendChild(fertilizeBtn);
 	if (daysToFertilize === 1) {
 		fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " day";
@@ -120,7 +120,7 @@ function containerCreator(event) {
 	//todo - repot
 	//Create check button - repot
 	const checkRepotBtn = document.createElement("button");
-	checkRepotBtn.classList.add("repot-btn");
+	checkRepotBtn.classList.add("todo-buttons");
 	plantDiv.appendChild(checkRepotBtn);
 	if (daysToRepot === 1) {
 		checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " day";
