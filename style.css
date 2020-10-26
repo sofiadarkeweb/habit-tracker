@@ -36,6 +36,7 @@ body {
 
 .plant-list {
 	display: block;
+	/* width: 80%; */
 
 	/* align-items: center;	 */
 }
@@ -43,7 +44,7 @@ body {
 .plant {
 	/* display: flex; */
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr ;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.3fr ;
 	grid-template-rows: repeat(3, 1fr);
 	/* grid-template-areas:
 		"pic plantname plantname plantname buttons bin"
@@ -53,22 +54,25 @@ body {
 	margin-bottom: 2rem;
 	margin-top: 2rem;
 	border-radius: 5px;
-	column-gap: 20px;
+	column-gap: 15px;
 	box-sizing: border-box;
 	
 	
 }
 
 .image-plant {
+	/* display: flex;
+	Justify-content: center;
+	align-items: center; */
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
 	grid-row-end: 4;
-	width: 10rem;
-	height:100%;
-    width: auto;
+	height: 30vh;
+	width: 20vw;
+	object-fit: cover;
 	
-	border-radius: 5px;
+	/* border-radius: 5px; */
 }
 
 .plant-name {
@@ -82,7 +86,7 @@ body {
 
 .info-text {
 	grid-column-start: 2;
-	grid-column-end: 5;
+	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 4;
 	text-align: left;
@@ -92,36 +96,50 @@ body {
 }
 
 .todo-buttons {
-	grid-column-start: 5;
-	grid-column-end: 7;
+	
+	Justify-self: right;
+	 
+	grid-column-start: 4;
+	grid-column-end: 6;
 	/* grid-row-start: 1;
 	grid-row-end: 4; */
 	/* justify-self: stretch; */
 	/* width: 12rem;
 	height: 3rem; */
 	border: none;
+	width: 9rem;
 	border-radius: 5px;
 	font-family: inherit;
-	font-size: 1em;
+	font-size: 0.8em;
 	background-color: #16552f;
 	color: #fff8e5;
 	border-radius: 5px;
 	padding: 5px;
 	margin: 10px;
+	cursor: pointer;
 	
+}
+
+.todo-buttons:hover {
+	background-color: #277245;
 }
 
 .bin-btn {
 
-	grid-column-start: 7;
-	grid-column-end: 8;
-	align-self: start;
-	height: 40px;
-  line-height: 40px;
-	width: 40px;
+	grid-column-start: 6;
+	grid-column-end: 7;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	/* align-self: center; */
+	height: 30px;
+  	line-height: 30px;
+	width: 30px;
+	margin-top: 10px;
+	margin-right: 10px;
 	border-radius: 50%;
 	border: none;
 	background-color: #16552f;
+	
 }
 
 #form-container {
@@ -171,13 +189,13 @@ body {
 #btn-icon {
 	color: #fff8e5;
 	font-size: 38px;
-	padding-top: 15px;
+	padding-top: 15px; 
 }
 
 #btn-icon-trash {
 	color: #fff8e5;
-	font-size: 1.1rem;
-	padding-top: 0.7rem;
+	font-size: 0.9rem;
+	padding-top: 0.4rem;
 }
 
 .description-input::placeholder {
