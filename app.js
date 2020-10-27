@@ -48,26 +48,37 @@ function containerCreator(event) {
 	plantDiv.id = plantIdentifier;
 	plantDiv.classList.add("plant");
 
-	//Display plant photo
-
-	//variables to date
+	// function to calculate days to do plant stuff
+	Date.prototype.addDays = function(days) {
+		const date = new Date(this.valueOf());
+		date.setDate(date.getDate() + days);
+		return date;
+	}
+	
 	const date = new Date();
-	const dayOfTheMonth = date.getDate();
+	const dueWaterDate = date.addDays(5);
+	const dueFertilizeDate = date.addDays(12);
+	const dueRepotDate = date.addDays(45);
+	
+	function daysTo(dueDate) {
+		const timeDifferenceInMilliseconds = dueDate - date.getTime();
+		const millisecondsInADay = 1000 * 60 * 60 * 24;
+		const daysTo = timeDifferenceInMilliseconds / millisecondsInADay;
+		return daysTo;
+	}
 
-	//variables to rewater
-	const dueWaterDate = dayOfTheMonth + 5;
-	const daysToRewater = dueWaterDate - dayOfTheMonth;
-	localStorage.setItem("dueWaterDate-" + plantIdentifier, dueWaterDate);
+	const daysToRewater = daysTo(dueWaterDate);
+	const daysToFertilize = daysTo(dueFertilizeDate);
+	const daysToRepot = daysTo(dueRepotDate);
 
-	//variables to fertilize
-	const dueFertilizeDate = dayOfTheMonth + 12;
-	const daysToFertilize = dueFertilizeDate - dayOfTheMonth;
-	localStorage.setItem("dueFertilizeDate-" + plantIdentifier, dueFertilizeDate);
-
-	//variables to repot
-	const dueRepotDate = dayOfTheMonth + 45;
-	const daysToRepot = dueRepotDate - dayOfTheMonth;
-	localStorage.setItem("dueRepotDate-" + plantIdentifier, dueRepotDate);
+	//function to save due date on Local Storage
+	function saveToLocalStorage(dueDateKey, dueDate) {
+		localStorage.setItem(dueDateKey + plantIdentifier, dueDate);
+	}
+	
+	saveToLocalStorage("dueWaterDate-", dueWaterDate);
+	saveToLocalStorage("dueFertilizeDate-", dueFertilizeDate);
+	saveToLocalStorage("dueRepotDate-", dueRepotDate);
 
 	//Creates the img for the plant
 	const plantImg = document.createElement("img");
