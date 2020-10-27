@@ -9,7 +9,12 @@ const plantImgs = [
 	"plant2.jpg",
 	"plant3.jpg",
 	"plant4.jpg",
-	"plant5.jpg"
+	"plant5.jpg",
+	"plant6.jpg",
+	"plant7.jpg",
+	"plant8.jpg",
+	"plant9.jpg",
+	"plant10.jpg"
 ];
 
 //todays date
