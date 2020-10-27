@@ -30,13 +30,34 @@ if (month < 10) {
 	month = "0" + month;
 }
 
-const date = document.getElementById("date");
+const todaysDate = document.getElementById("date");
 
-date.innerHTML = year + "-" + month + "-" + day;
+todaysDate.innerHTML = year + "-" + month + "-" + day;
 
 //event listeners
 addbBtn.addEventListener("click", containerCreator);
 document.addEventListener("DOMContentLoaded", getFromLocalStorage);
+
+//functions
+// function to calculate days to do plant stuff
+Date.prototype.addDays = function(days) {
+	const date = new Date(this.valueOf());
+	date.setDate(date.getDate() + days);
+	return date;
+}
+
+//function to know how many days to due date
+const date = new Date();
+const dueWaterDate = date.addDays(5);
+const dueFertilizeDate = date.addDays(12);
+const dueRepotDate = date.addDays(45);
+
+function daysTo(dueDate) {
+	const timeDifferenceInMilliseconds = dueDate - date.getTime();
+	const millisecondsInADay = 1000 * 60 * 60 * 24;
+	const daysTo = timeDifferenceInMilliseconds / millisecondsInADay;
+	return daysTo;
+}
 
 //function to create the div with plant information
 function containerCreator(event) {
@@ -44,67 +65,40 @@ function containerCreator(event) {
 
 	const plantIdentifier = "plant-" + Math.round(Math.random() * 100000);
 
-	// create plant Div
+	//Create plant Div
 	const plantDiv = document.createElement("div");
 	plantDiv.id = plantIdentifier;
 	plantDiv.classList.add("plant");
-
-	// function to calculate days to do plant stuff
-	Date.prototype.addDays = function(days) {
-		const date = new Date(this.valueOf());
-		date.setDate(date.getDate() + days);
-		return date;
-	}
-	
-	const date = new Date();
-	const dueWaterDate = date.addDays(5);
-	const dueFertilizeDate = date.addDays(12);
-	const dueRepotDate = date.addDays(45);
-	
-	function daysTo(dueDate) {
-		const timeDifferenceInMilliseconds = dueDate - date.getTime();
-		const millisecondsInADay = 1000 * 60 * 60 * 24;
-		const daysTo = timeDifferenceInMilliseconds / millisecondsInADay;
-		return daysTo;
-	}
 
 	const daysToRewater = daysTo(dueWaterDate);
 	const daysToFertilize = daysTo(dueFertilizeDate);
 	const daysToRepot = daysTo(dueRepotDate);
 
-	//Creates the img for the plant
+	//Create the img for the plant
 	const plantImg = document.createElement("img");
 	plantDiv.appendChild(plantImg);
 	plantImg.src = plantImgs[Math.floor(Math.random() * plantImgs.length)];
 	plantImg.classList.add("image-plant");
 
-	//Creates the header/name for the container
+	//Create the header/name for the container
 	const newName = document.createElement("h2");
 	plantDiv.appendChild(newName);
 	const name = nameInput.value
 	newName.innerText = name;
 	newName.classList.add("plant-name");
 
-	// Clears name input
+	//Clear name input
 	nameInput.value = "";
 
-	//Creates the description for the plant
+	//Create the description for the plant
 	const newDescription = document.createElement("p");
 	plantDiv.appendChild(newDescription);
 	const description = descriptionInput.value;
 	newDescription.innerText = description;
 	newDescription.classList.add("info-text");
 
-	// Clears name input
+	// Clear name input
 	descriptionInput.value = "";
-
-	//function to save data on Local Storage
-	function saveToLocalStorage(plantIdentifier) {
-		const dueDatesToLocalStorage = { "divIdentifier": plantIdentifier, "plantName": name, "plantDescription": description,  "dueWaterDate": dueWaterDate, "dueFertilizeDate": dueFertilizeDate, "dueRepotDate": dueRepotDate}
-		localStorage.setItem(dueDatesToLocalStorage + plantIdentifier, JSON.stringify(dueDatesToLocalStorage));
-	}
-
-	saveToLocalStorage(plantIdentifier);
 
 	//todo - water
 	//Create check button - water
@@ -149,6 +143,7 @@ function containerCreator(event) {
 		checkRepotBtn.innerText = "Repot me in 45 days";
 	});
 
+	//Create trash button
 	const binBtn = document.createElement("button");
 	binBtn.classList.add("bin-btn");
 	binBtn.innerHTML = '<i id="btn-icon-trash" class="fas fa-trash"></i>';
@@ -160,6 +155,14 @@ function containerCreator(event) {
 		selectedPlant.remove();
 	}
 
+	//function to save data on Local Storage
+	function saveToLocalStorage(plantIdentifier) {
+		const dueDatesToLocalStorage = { "divIdentifier": plantIdentifier, "plantName": name, "plantDescription": description,  "dueWaterDate": dueWaterDate, "dueFertilizeDate": dueFertilizeDate, "dueRepotDate": dueRepotDate}
+		localStorage.setItem(dueDatesToLocalStorage + plantIdentifier, JSON.stringify(dueDatesToLocalStorage));
+	}
+
+	saveToLocalStorage(plantIdentifier);
+
 	// Append to plant list
 	plantList.appendChild(plantDiv);
 }
@@ -170,38 +173,6 @@ function getFromLocalStorage() {
 		dataToFetch = [];
 	} else {
 		dataToFetch = JSON.parse(localStorage.getItem("dataToFetch"));
+		console.log(dataToFetch);
 	}
-	// dataToFetch.forEach(function(){
-	// 	// create plant Div
-	// 	const plantDiv = document.createElement("div");
-	// 	plantDiv.id = plantIdentifier;
-	// 	plantDiv.classList.add("plant");
-	// 	//todo - fertilize
-	// 	//Create check button - fertilize
-	// 	const fertilizeBtn = document.createElement("button");
-	// 	fertilizeBtn.classList.add("todo-buttons");
-	// 	plantDiv.appendChild(fertilizeBtn);
-	// 	if (daysToFertilize === 1) {
-	// 		fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " day";
-	// 	} else {
-	// 		fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " days";
-	// 	}
-	// 	fertilizeBtn.addEventListener("click", function () {
-	// 		fertilizeBtn.innerText = "Fertilize me in 12 days";
-	// 	});
-
-	// 	//todo - repot
-	// 	//Create check button - repot
-	// 	const checkRepotBtn = document.createElement("button");
-	// 	checkRepotBtn.classList.add("todo-buttons");
-	// 	plantDiv.appendChild(checkRepotBtn);
-	// 	if (daysToRepot === 1) {
-	// 		checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " day";
-	// 	} else {
-	// 		checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " days";
-	// 	}
-	// 	checkRepotBtn.addEventListener("click", function () {
-	// 		checkRepotBtn.innerText = "Repot me in 45 days";
-	// });
-	// });
 }
