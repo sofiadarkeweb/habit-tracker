@@ -13,6 +13,19 @@ body {
 	width: 80vw;
 }
 
+.doodle {
+	position: fixed;
+    z-index: -1;
+}
+
+/* .container {
+    width: 100%;
+    background: #fff;
+    margin: 2rem auto;
+    padding: 5rem;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, .2);
+} */
+
 #date {
 	padding-top: 2rem;
 	padding-bottom: 1.5rem;
@@ -184,6 +197,13 @@ body {
 	border: none;
 	background-color: #16552f;
 	margin-left: 15px;
+	cursor: pointer;
+	border: none;
+}
+
+
+.submit-button:hover {
+	background-color: #277245;
 }
 
 #btn-icon {
