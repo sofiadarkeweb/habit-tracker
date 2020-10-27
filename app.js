@@ -36,6 +36,7 @@ date.innerHTML = year + "-" + month + "-" + day;
 
 //event listeners
 addbBtn.addEventListener("click", containerCreator);
+document.addEventListener("DOMContentLoaded", getFromLocalStorage);
 
 //function to create the div with plant information
 function containerCreator(event) {
@@ -71,15 +72,6 @@ function containerCreator(event) {
 	const daysToFertilize = daysTo(dueFertilizeDate);
 	const daysToRepot = daysTo(dueRepotDate);
 
-	//function to save due date on Local Storage
-	function saveToLocalStorage(dueDateKey, dueDate) {
-		localStorage.setItem(dueDateKey + plantIdentifier, dueDate);
-	}
-	
-	saveToLocalStorage("dueWaterDate-", dueWaterDate);
-	saveToLocalStorage("dueFertilizeDate-", dueFertilizeDate);
-	saveToLocalStorage("dueRepotDate-", dueRepotDate);
-
 	//Creates the img for the plant
 	const plantImg = document.createElement("img");
 	plantDiv.appendChild(plantImg);
@@ -89,7 +81,8 @@ function containerCreator(event) {
 	//Creates the header/name for the container
 	const newName = document.createElement("h2");
 	plantDiv.appendChild(newName);
-	newName.innerText = nameInput.value;
+	const name = nameInput.value
+	newName.innerText = name;
 	newName.classList.add("plant-name");
 
 	// Clears name input
@@ -98,11 +91,20 @@ function containerCreator(event) {
 	//Creates the description for the plant
 	const newDescription = document.createElement("p");
 	plantDiv.appendChild(newDescription);
-	newDescription.innerText = descriptionInput.value;
+	const description = descriptionInput.value;
+	newDescription.innerText = description;
 	newDescription.classList.add("info-text");
 
 	// Clears name input
 	descriptionInput.value = "";
+
+	//function to save data on Local Storage
+	function saveToLocalStorage(plantIdentifier) {
+		const dueDatesToLocalStorage = { "divIdentifier": plantIdentifier, "plantName": name, "plantDescription": description,  "dueWaterDate": dueWaterDate, "dueFertilizeDate": dueFertilizeDate, "dueRepotDate": dueRepotDate}
+		localStorage.setItem(dueDatesToLocalStorage + plantIdentifier, JSON.stringify(dueDatesToLocalStorage));
+	}
+
+	saveToLocalStorage(plantIdentifier);
 
 	//todo - water
 	//Create check button - water
@@ -160,4 +162,46 @@ function containerCreator(event) {
 
 	// Append to plant list
 	plantList.appendChild(plantDiv);
+}
+
+function getFromLocalStorage() {
+	let dataToFetch;
+	if (localStorage.getItem("dataToFetch") === null) {
+		dataToFetch = [];
+	} else {
+		dataToFetch = JSON.parse(localStorage.getItem("dataToFetch"));
+	}
+	// dataToFetch.forEach(function(){
+	// 	// create plant Div
+	// 	const plantDiv = document.createElement("div");
+	// 	plantDiv.id = plantIdentifier;
+	// 	plantDiv.classList.add("plant");
+	// 	//todo - fertilize
+	// 	//Create check button - fertilize
+	// 	const fertilizeBtn = document.createElement("button");
+	// 	fertilizeBtn.classList.add("todo-buttons");
+	// 	plantDiv.appendChild(fertilizeBtn);
+	// 	if (daysToFertilize === 1) {
+	// 		fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " day";
+	// 	} else {
+	// 		fertilizeBtn.innerText = "Fertilize me in " + daysToFertilize + " days";
+	// 	}
+	// 	fertilizeBtn.addEventListener("click", function () {
+	// 		fertilizeBtn.innerText = "Fertilize me in 12 days";
+	// 	});
+
+	// 	//todo - repot
+	// 	//Create check button - repot
+	// 	const checkRepotBtn = document.createElement("button");
+	// 	checkRepotBtn.classList.add("todo-buttons");
+	// 	plantDiv.appendChild(checkRepotBtn);
+	// 	if (daysToRepot === 1) {
+	// 		checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " day";
+	// 	} else {
+	// 		checkRepotBtn.innerHTML = "Repot me in " + daysToRepot + " days";
+	// 	}
+	// 	checkRepotBtn.addEventListener("click", function () {
+	// 		checkRepotBtn.innerText = "Repot me in 45 days";
+	// });
+	// });
 }
