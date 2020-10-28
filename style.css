@@ -1,119 +1,234 @@
-
-body {
-	font-family: "Poppins", sans-serif;
-    background: #53f1cb;
-    color:#16552F;
-}
-
 * {
 	margin: 0;
 	padding: 0;
 }
 
-.plant-container {
-	display: grid;
-	width: 1200px;
-	height: 150px;
-	grid-template-areas:
-		"image name name name button1 bin"
-		"image info info info button2 ."
-		"image info info info button3 .";
-	grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    padding: 2rem;
+body {
+	color: #16552f;
+	background-color: #53f1cb;
+	font-family: "Poppins", sans-serif;
+	text-align: center;
+	/* justify-content: center; */
+	margin: 0 auto;
+	width: 80vw;
 }
 
-.img-box {
+.doodle {
+	position: fixed;
+    z-index: -1;
+}
+
+/* .container {
+    width: 100%;
+    background: #fff;
+    margin: 2rem auto;
+    padding: 5rem;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, .2);
+} */
+
+#date {
+	padding-top: 2rem;
+	padding-bottom: 1.5rem;
+}
+
+.header {
+	padding-top: 2rem;
+	padding-bottom: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.paragraph {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
+
+.plant-container {
+	justify-content: center;
+}
+
+.plant-list {
+	display: block;
+	/* width: 80%; */
+
+	/* align-items: center;	 */
+}
+
+.plant {
+	/* display: flex; */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.3fr ;
+	grid-template-rows: repeat(3, 1fr);
+	/* grid-template-areas:
+		"pic plantname plantname plantname buttons bin"
+		"pic info info info buttons ."
+		"pic info info buttons ."; */
 	background: #fff8e5;
-	grid-area: image;
-	border: 1px solid;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	border-radius: 5px;
+	column-gap: 15px;
+	box-sizing: border-box;
+	
+	
+}
+
+.image-plant {
+	/* display: flex;
+	Justify-content: center;
+	align-items: center; */
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 4;
+	height: 30vh;
+	width: 20vw;
+	object-fit: cover;
+	
+	/* border-radius: 5px; */
 }
 
 .plant-name {
-    background: #fff8e5;
-	grid-area: name;
-    border: 1px solid;
-    width: auto;
-    padding-left: 0.3em;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	margin-top: 1rem;
+	font-size: 2em;
+	text-align: left;
 }
+
 
 .info-text {
-	background: #fff8e5;
-	grid-area: info;
-    border: 1px solid;
-    padding-left: 0.3em;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 4;
+	text-align: left;
+	font-size: 0.8em;
+
+	/* text-align: left; */
 }
 
-.water-btn {
-	grid-area: button1;
-	justify-self: stretch;
-    border: none;
-    border-radius: 5px;
-    margin: 5pt;
+.todo-buttons {
+	
+	Justify-self: right;
+	 
+	grid-column-start: 4;
+	grid-column-end: 6;
+	/* grid-row-start: 1;
+	grid-row-end: 4; */
+	/* justify-self: stretch; */
+	/* width: 12rem;
+	height: 3rem; */
+	border: none;
+	width: 9rem;
+	border-radius: 5px;
 	font-family: inherit;
-    background-color: #16552F;
-    color: #fff8e5;
+	font-size: 0.8em;
+	background-color: #16552f;
+	color: #fff8e5;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 10px;
+	cursor: pointer;
+	
 }
 
-.fertilize-btn {
-    grid-area: button2;
-    justify-self: stretch;
-    border: none;
-    border-radius: 5px;
-    margin: 5pt;
-	font-family: inherit;
-    background-color: #16552F;
-    color: #fff8e5;
+.todo-buttons:hover {
+	background-color: #277245;
 }
 
-.repot-btn {
-    grid-area: button3;
-    justify-self: stretch;
-    border: none;
-    border-radius: 5px;
-    margin: 5pt;
-	font-family: inherit;
-    background-color: #16552F;
-    color: #fff8e5;
+.bin-btn {
+
+	grid-column-start: 6;
+	grid-column-end: 7;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	/* align-self: center; */
+	height: 30px;
+  	line-height: 30px;
+	width: 30px;
+	margin-top: 10px;
+	margin-right: 10px;
+	border-radius: 50%;
+	border: none;
+	background-color: #16552f;
+	
 }
 
 #form-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-    "image name name button" 
-    "image description description button"
-    "image description description .";
-    gap: 5px;
-    width: 80%;
-}
-
-.image-input {
-    grid-area: image;
-    width: 123px;
-    justify-self: end;
-    border: 1px solid;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"name name button"
+		"description description button"
+		"description description .";
+	gap: 8px;
+	width: 80vw;
+	padding: 40px 0;
+	margin-left: 5.5rem;
 }
 
 .name-input {
-    grid-area: name;
-    width: auto;
-    justify-self: stretch;
+	grid-area: name;
+	width: auto;
+	justify-self: stretch;
+	background-color: #fff8e5;
+	border-radius: 5px;
+	border: none;
 }
 
 .description-input {
-    grid-area: description;
-    width: auto;
-    justify-self: stretch;
+	grid-area: description;
+	width: auto;
+	justify-self: stretch;
+	background-color: #fff8e5;
+	border-radius: 5px;
+	border: none;
 }
 
 .submit-button {
-    grid-area: button;
-    align-self: start;
-    height: 80px;
-    line-height: 80px;  
-    width: 80px;  
-    border-radius: 50%;
-    border: 1px solid;
+	grid-area: button;
+	align-self: start;
+	height: 70px;
+	line-height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #16552f;
+	margin-left: 15px;
+	cursor: pointer;
+	border: none;
+}
+
+
+.submit-button:hover {
+	background-color: #277245;
+}
+
+#btn-icon {
+	color: #fff8e5;
+	font-size: 38px;
+	padding-top: 15px; 
+}
+
+#btn-icon-trash {
+	color: #fff8e5;
+	font-size: 0.9rem;
+	padding-top: 0.4rem;
+}
+
+.description-input::placeholder {
+	font-family: "Poppins", sans-serif;
+	color: #16552f;
+	padding-left: 10px;
+	padding-top: 10px;
+	font-size: 12px;
+}
+
+.name-input::placeholder {
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	color: #16552f;
+	padding-left: 10px;
 }
