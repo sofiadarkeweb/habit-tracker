@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://kit.fontawesome.com/ba5ff8c0a6.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script
+			src="https://kit.fontawesome.com/ba5ff8c0a6.js"
+			crossorigin="anonymous"
+		></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
 
-    <title>Habit tracker</title>
-</head>
-<css-doodle grid="5" class="doodle">
-  :doodle {
-      @grid: 20 / 100vmax;
-      grid-gap: 4vmax;
-  }
-  
-  background: #26C6DA;
-  transform: scale(@rand(.1, .9)) translate3d(@r(50px), @r(100px), 0);
-  background: hsla(@r(360), 85%, @r(70%, 90%), @r(.9));
-  border-radius: @r(10px);
-</css-doodle>
-<body>
-    <div id="date">Today's date</div>
-    <div class="header">
-      <h1>Plant tracker</h1>
-    </div>
-    <div class="paragraph">
-      <p>The app that helps your plants thrive! Never forget to water your plant again, we can help you with that. Fill the form with your data and let the rest to us.</p>
-    </div>
-    <div>
-        <form id="form-container">
-            <input class="name-input" placeholder= "Name your plant" type="text">
-            <textarea class="description-input" placeholder="Describe your plant"></textarea> 
-            <button class="submit-button"><i id="btn-icon" class="fas fa-plus"></i>
-            </button>
-        </form>
-    </div>
-    <div class="plant-container"> 
-      <ul class="plant-list"></ul>
-    </div>
-   <script src="app.js"></script>
-   <script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
-
-</body>
+		<title>Habit tracker</title>
+	</head>
+	<css-doodle grid="5" class="doodle">
+		:doodle { @grid: 20 / 100vmax; grid-gap: 4vmax; } background: #26C6DA;
+		transform: scale(@rand(.1, .9)) translate3d(@r(50px), @r(100px), 0);
+		background: hsla(@r(360), 85%, @r(70%, 90%), @r(.9)); border-radius:
+		@r(10px);
+	</css-doodle>
+	<body>
+		<div id="date">Today's date</div>
+		<div class="header">
+			<h1>PlantFeed</h1>
+		</div>
+		<div class="paragraph">
+			<p>
+				The app that helps your plants thrive! Never forget to water your plant
+				again, we can help you with that. Fill the form with your data and let
+				the rest to us.
+			</p>
+		</div>
+		<div>
+			<form id="form-container">
+				<input class="name-input" placeholder="Name your plant" type="text" />
+				<textarea
+					class="description-input"
+					placeholder="Describe your plant"
+				></textarea>
+				<button class="submit-button">
+					<i id="btn-icon" class="fas fa-plus"></i>
+				</button>
+			</form>
+		</div>
+		<div class="plant-container">
+			<ul class="plant-list"></ul>
+		</div>
+		<footer>
+			<div id="footer">
+				Developed by Adam Webb, Cecilia Lobo and Sofia Darke
+			</div>
+		</footer>
+		<script src="app.js"></script>
+		<script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+	</body>
 </html>
-

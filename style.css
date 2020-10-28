@@ -8,23 +8,14 @@ body {
 	background-color: #53f1cb;
 	font-family: "Poppins", sans-serif;
 	text-align: center;
-	/* justify-content: center; */
 	margin: 0 auto;
 	width: 80vw;
 }
 
 .doodle {
 	position: fixed;
-    z-index: -1;
+	z-index: -1;
 }
-
-/* .container {
-    width: 100%;
-    background: #fff;
-    margin: 2rem auto;
-    padding: 5rem;
-    box-shadow: 0 0 50px 0 rgba(0, 0, 0, .2);
-} */
 
 #date {
 	padding-top: 2rem;
@@ -49,34 +40,22 @@ body {
 
 .plant-list {
 	display: block;
-	/* width: 80%; */
-
-	/* align-items: center;	 */
 }
 
 .plant {
 	/* display: flex; */
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.3fr ;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.3fr;
 	grid-template-rows: repeat(3, 1fr);
-	/* grid-template-areas:
-		"pic plantname plantname plantname buttons bin"
-		"pic info info info buttons ."
-		"pic info info buttons ."; */
 	background: #fff8e5;
 	margin-bottom: 2rem;
 	margin-top: 2rem;
 	border-radius: 5px;
 	column-gap: 15px;
 	box-sizing: border-box;
-	
-	
 }
 
 .image-plant {
-	/* display: flex;
-	Justify-content: center;
-	align-items: center; */
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
@@ -84,8 +63,6 @@ body {
 	height: 30vh;
 	width: 20vw;
 	object-fit: cover;
-	
-	/* border-radius: 5px; */
 }
 
 .plant-name {
@@ -95,7 +72,6 @@ body {
 	font-size: 2em;
 	text-align: left;
 }
-
 
 .info-text {
 	grid-column-start: 2;
@@ -109,16 +85,9 @@ body {
 }
 
 .todo-buttons {
-	
-	Justify-self: right;
-	 
+	justify-self: right;
 	grid-column-start: 4;
 	grid-column-end: 6;
-	/* grid-row-start: 1;
-	grid-row-end: 4; */
-	/* justify-self: stretch; */
-	/* width: 12rem;
-	height: 3rem; */
 	border: none;
 	width: 9rem;
 	border-radius: 5px;
@@ -130,7 +99,6 @@ body {
 	padding: 5px;
 	margin: 10px;
 	cursor: pointer;
-	
 }
 
 .todo-buttons:hover {
@@ -138,21 +106,23 @@ body {
 }
 
 .bin-btn {
-
 	grid-column-start: 6;
 	grid-column-end: 7;
 	grid-row-start: 1;
 	grid-row-end: 2;
-	/* align-self: center; */
 	height: 30px;
-  	line-height: 30px;
+	line-height: 30px;
 	width: 30px;
 	margin-top: 10px;
 	margin-right: 10px;
 	border-radius: 50%;
 	border: none;
 	background-color: #16552f;
-	
+	cursor: pointer;
+}
+
+.bin-btn:hover {
+	background-color: #277245;
 }
 
 #form-container {
@@ -199,8 +169,8 @@ body {
 	margin-left: 15px;
 	cursor: pointer;
 	border: none;
+	outline: none;
 }
-
 
 .submit-button:hover {
 	background-color: #277245;
@@ -209,13 +179,13 @@ body {
 #btn-icon {
 	color: #fff8e5;
 	font-size: 38px;
-	padding-top: 15px; 
+	padding-top: 15px;
 }
 
 #btn-icon-trash {
 	color: #fff8e5;
 	font-size: 0.9rem;
-	padding-top: 0.4rem;
+	padding-top: 0.5rem;
 }
 
 .description-input::placeholder {
@@ -231,4 +201,16 @@ body {
 	font-weight: 500;
 	color: #16552f;
 	padding-left: 10px;
+}
+
+/* footer {
+	position: relative;
+} */
+
+#footer {
+	font-size: 0.8rem;
+	margin-top: 20vh;
+	margin-bottom: 4vh;
+	/* padding-bottom: 20px; */
+
 }
