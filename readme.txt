@@ -1,6 +1,2 @@
-
-This is our track stuffer
-
-
-Habit Tracker from Hyper Islands second Module
+https://sofiadarkeweb.github.io/habit-tracker/index
 
