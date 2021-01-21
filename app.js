@@ -14,13 +14,13 @@ const plantImgs = [
 	"plant7.jpg",
 	"plant8.jpg",
 	"plant9.jpg",
-	"plant10.jpg"
+	"plant10.jpg",
 ];
 
 //todays date
 const today = new Date();
 const day = today.getDate();
-const month = today.getMonth() + 1;
+let month = today.getMonth() + 1;
 const year = today.getFullYear();
 
 if (day < 10) {
@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", getFromLocalStorage);
 
 //functions
 // function to calculate days to do plant stuff
-Date.prototype.addDays = function(days) {
+Date.prototype.addDays = function (days) {
 	const date = new Date(this.valueOf());
 	date.setDate(date.getDate() + days);
 	return date;
-}
+};
 
 //function to know how many days to due date
 const date = new Date();
@@ -83,7 +83,7 @@ function containerCreator(event) {
 	//Create the header/name for the container
 	const newName = document.createElement("h2");
 	plantDiv.appendChild(newName);
-	const name = nameInput.value
+	const name = nameInput.value;
 	newName.innerText = name;
 	newName.classList.add("plant-name");
 
@@ -149,7 +149,7 @@ function containerCreator(event) {
 	binBtn.innerHTML = '<i id="btn-icon-trash" class="fas fa-trash"></i>';
 	plantDiv.appendChild(binBtn);
 	binBtn.addEventListener("click", deleteTodo);
-	
+
 	function deleteTodo() {
 		const selectedPlant = document.getElementById(plantIdentifier);
 		selectedPlant.remove();
@@ -157,8 +157,18 @@ function containerCreator(event) {
 
 	//function to save data on Local Storage
 	function saveToLocalStorage(plantIdentifier) {
-		const dueDatesToLocalStorage = { "divIdentifier": plantIdentifier, "plantName": name, "plantDescription": description,  "dueWaterDate": dueWaterDate, "dueFertilizeDate": dueFertilizeDate, "dueRepotDate": dueRepotDate}
-		localStorage.setItem(dueDatesToLocalStorage + plantIdentifier, JSON.stringify(dueDatesToLocalStorage));
+		const dueDatesToLocalStorage = {
+			divIdentifier: plantIdentifier,
+			plantName: name,
+			plantDescription: description,
+			dueWaterDate: dueWaterDate,
+			dueFertilizeDate: dueFertilizeDate,
+			dueRepotDate: dueRepotDate,
+		};
+		localStorage.setItem(
+			dueDatesToLocalStorage + plantIdentifier,
+			JSON.stringify(dueDatesToLocalStorage)
+		);
 	}
 
 	saveToLocalStorage(plantIdentifier);
